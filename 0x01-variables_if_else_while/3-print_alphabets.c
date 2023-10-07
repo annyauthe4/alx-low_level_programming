@@ -7,21 +7,15 @@
  */
 int main(void)
 {
-	int i = 97;
-	int p = 65;
+	int i;
 
-	while (i < 123 || p < 91)
+	for (i = 'a'; i <= 'z'; i++)
 	{
-		if (i < 123)
-		{
-			putchar(i);
-			i++;
-		}
-		if ((i == 122) && p < 91)
-		{
-			putchar(p);
-			p++;
-		}
+		putchar(i);
+	}
+	for (i = 'A'; i <= 'Z'; i++)
+	{
+		putchar(i);
 	}
 	putchar('\n');
 	return (0);
