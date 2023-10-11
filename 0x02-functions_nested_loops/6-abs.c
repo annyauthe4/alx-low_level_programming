@@ -2,14 +2,12 @@
 
 /**
  * _abs - prints the absolute value of an integer
- * @int: The integer to check.
+ * @x: The integer to check.
  *
  * Return: int.
  */
-int _abs(int)
+int _abs(int x)
 {
-	int x;
-
 	if (x < 0)
 	{
 		x = x * -1;
