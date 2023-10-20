@@ -9,10 +9,10 @@
 char *string_toupper(char *ptr)
 {
 	int i;
-
+	
 	for (i = 0; ptr[i] != '\0'; i++)
 	{
-		if (i >= 'a' && i <= 'z')
+		if (ptr[i] >= 'a' && ptr[i] <= 'z')
 		{
 			ptr[i] = ptr[i] - ('a' - 'A');
 		}
