@@ -5,19 +5,17 @@
  * @s: pointer to the string
  * @c: character to look for
  *
- * Return: the pointer to the string
+ * Return: s, the pointer to the string
  */
 char *_strchr(char *s, char c)
 {
-	while (*s)
+	while (*s != '\0')
 	{
-		if (*s != c)
-			s++;
-		else
+		if (*s == c)
+		{
 			return (s);
+		}
+		s++;
 	}
-	if (c == '\0')
-		return (s);
-
 	return (NULL);
 }
