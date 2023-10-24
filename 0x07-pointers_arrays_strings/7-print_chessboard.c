@@ -3,7 +3,6 @@
 /**
  * print_chessboard - prints chessboard
  * @a: pointer to number of array
- * @8: number of subarray
  *
  * Return: void
  */
