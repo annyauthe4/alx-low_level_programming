@@ -24,12 +24,13 @@ int _strlen_recursion(char *s)
  */
 int palindrome_ch(char *s, int start, int end)
 {
-	if (start >= end)
-		return (1);
-	else if (s[start] != s[end])
-		return (0);
+	if (start == end)
+		if (start > end / 2)
+			return (1);
+		else
+			return (palindrome_ch(s, start + 1, end - 1));
 	else
-		return (palindrome_ch(s, start + 1, end - 1));
+		return (0);
 }
 
 /**
