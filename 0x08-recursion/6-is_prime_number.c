@@ -13,22 +13,22 @@ int is_prime_number(int n)
 	else if (n <= 3)
 		return (1);
 	else
-		return (prime_search(n, 2));
+		return (prime_checker(n, 2));
 }
 
 /**
- * prime_search - helps search for prime numbers
+ * prime_checker - helps search for prime numbers
  * @n: searched number
  * @divisor: the divisor
  *
  * Return: prime number
  */
-int prime_search(int n, int divisor)
+int prime_checker(int n, int divisor)
 {
 	if (divisor * divisor > n)
 		return (1);
 	else if (n % divisor == 0)
 		return (0);
 	else
-		return (prime_search(n, divisor + 1));
+		return (prime_checker(n, divisor + 1));
 }
