@@ -1,3 +1,4 @@
 #!/bin/bash
-ar -rcs liball.a *.o
-
+gcc -c *.c
+ar -rc liball.a *.o
+ranlib liball.a
