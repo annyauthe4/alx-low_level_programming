@@ -29,8 +29,8 @@ int main(int argc, char *argv[])
 	{
 		while (coins >= cent[i])
 		{
-		       coins-= cent[i];
-		       num_coins++;
+			coins -= cent[i];
+			num_coins++;
 		}
 	}
 	printf("%d\n", num_coins);
