@@ -11,30 +11,32 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *arr;
-	unsigned int len;
+	unsigned int len1;
+	unsigned int len2;
 	unsigned int i;
-	unsigned int j;
 
-	if (s1 == NULL)
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	else if (s2 == NULL)
-		return (NULL);
-	len = 0;
-	while (s1[len] != '\0')
+	len1 = 0;
+	while (s1[len1] != '\0')
 	{
-		len++;
+		len1++;
 	}
-	for (i = 0; i != '\0'; i++)
+	while (s2[len2] != '\0')
 	{
-		s1[len] = s2[i];
+		len2++
 	}
-	s1[len] = '\0';
-	arr = (char *)malloc(len);
+	arr = (char *)malloc(len1 + len2 + 1);
 	if (arr == NULL)
 		return (NULL);
-	for (j = 0; j <= len; j++)
+	for (i = 0; i <= len1; i++)
 	{
 		arr[i] = s1[i];
 	}
+	for (i = 0; i <= len2; i++)
+	{
+		arr[len1 + i] = s2[i];
+	}
+	arr[len1 + len2] = '\0';
 	return (arr);
 }
