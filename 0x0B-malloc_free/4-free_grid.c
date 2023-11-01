@@ -15,8 +15,6 @@ void free_grid(int **grid, int height)
 	int j;
 
 	grid = (int **)malloc(height * sizeof(int *));
-	if (grid == NULL)
-		return (NULL);
 	for (i = 0; i < height; i++)
 	{
 		grid[i] = (int *)malloc(w * sizeof(int));
@@ -27,7 +25,6 @@ void free_grid(int **grid, int height)
 				free(grid[j]);
 			}
 			free(grid);
-			return (NULL);
 		}
 	}
 }
