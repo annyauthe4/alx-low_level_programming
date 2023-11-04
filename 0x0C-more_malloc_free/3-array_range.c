@@ -8,13 +8,13 @@
  *
  * Return: pointer to a newly created array or NULL
  */
-int *array_range(int min, int max);
+int *array_range(int min, int max)
 {
 	int *arr, i, j, num_element;
 
 	if (min > max)
 		return (NULL);
-	num_element = max - min + 1;
+	num_element = (max - min) + 1;
 	arr = malloc(num_element * sizeof(int));
 	if (arr == NULL)
 		return (NULL);
