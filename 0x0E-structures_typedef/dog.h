@@ -17,19 +17,5 @@ struct dog
 };
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
-
-/**
- * struct dog - structure for dog
- * @name: pointer to a dog name
- * @age: float type for dog age
- * @owner: pointer to dog owner name
- *
- * Return: void
- */
-struct dog
-{
-	char *name;
-	float age;
-	char *owner;
-}
+typedef struct dog dog_t;
 #endif
