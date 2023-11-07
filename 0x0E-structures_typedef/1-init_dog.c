@@ -1,6 +1,8 @@
 #ifndef _1_INIT_DOG_C_
 #define _1_INIT_DOG_C_
 
+#include "dog.h"
+
 /**
  * init_dog - initializes structure of dog
  * @d: pointer to struct dog
