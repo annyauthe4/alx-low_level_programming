@@ -43,6 +43,7 @@ void print_all(const char * const format, ...)
 		}
 		if (format[i + 1] != '\0' && flag == 0)
 			printf(", ");
+
 		i++;
 	}
 	printf("\n");
