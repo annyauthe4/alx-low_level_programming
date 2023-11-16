@@ -27,20 +27,28 @@ int _strlen(const char *s)
   */
 list_t *add_node(list_t **head, const char *str)
 {
+	int i, len;
+	char *array;
 	list_t *new_node;
 
 	if (str == NULL)
 		return (NULL);
+	len = _strlen(str);
+	array = malloc((len + 1) * sizeof(char))
+		if (array == NULL)
+			return (NULL);
+	for (i = 0; i < len; i++)
+	{
+		array[i] = str[i];
+	}
 	new_node = malloc(sizeof(list_t));
 	if (new_node == NULL)
-		return (NULL);
-	new_node->str = strdup(str);
-	if (new_node->str == NULL)
 	{
 		free(new_node);
 		return (NULL);
 	}
-	new_node->len = _strlen(str);
+	new_node->str = array;
+	new_node->len = len;
 	new_node->next = *head;
 	*head = new_node;
 	return (new_node);
