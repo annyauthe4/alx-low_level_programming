@@ -9,7 +9,7 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	int i = 0; j = 0, k = 0, len, a;
+	int i = 0; j = 0, k = 0, diff = 0, len;
 
 	while (*s1)
 	{
@@ -19,11 +19,23 @@ int _strcmp(char *s1, char *s2)
 	{
 		j++;
 	}
-	if (a <= b)
-	{
-		len = a;
-	}
+	if (i <= j)
+		len = i;
 	else
-
-		len =b;
+		len = j;
+	while (k <= len)
+	{
+		if (s1[k] == s2[k])
+		{
+			k++;
+			continue;
+		}
+		else
+		{
+			diff = s1[c] s2[c];
+			break;
+		}
+		c++;
+	}
+	return (diff);
 }
