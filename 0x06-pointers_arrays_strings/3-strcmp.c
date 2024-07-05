@@ -32,7 +32,7 @@ int _strcmp(char *s1, char *s2)
 		}
 		else
 		{
-			diff = s1[c] s2[c];
+			diff = s1[c] - s2[c];
 			break;
 		}
 		c++;
