@@ -1,6 +1,25 @@
 #include "main.h"
 
 /**
+  * _strlen - Counts string len
+  * @str: Pointer to string
+  * Return: count
+  */
+size_t _strlen(char *str)
+{
+	size_t count;
+
+	count = 0;
+	if (str == NULL)
+		return (count);
+	while (*str != '\0')
+	{
+		count++;
+		str++;
+	}
+	return (count);
+}
+/**
   * append_text_to_file - Appends text to file.
   * @filename: The file to append to.
   * @text_content: The text to apppend.
