@@ -42,6 +42,24 @@ void check_fd_to(int fd, char *file_to)
 	}
 }
 /**
+  * check_bytes_read - Check for bytes read failure
+  * @bytes_read: The number of bytes read.
+  * @str: Pointer to source file.
+  * @fd_from: File descriptor of source file.
+  * @fd_to: File descriptor of destination file.
+  * Return: void
+  */
+void check_bytes_read(ssize_t bytes_read, char *str, int fd_from, int fd_to)
+{
+	if (bytes_read == -1)
+	{
+		dprintf(STDERR_FILENO, READ_ERROR, str);
+		close(fd_from);
+		close(fd_to);
+		exit(98);
+	}
+}
+/**
   * main - Program copies the content of a file into another file
   * @argc: Argument count
   * @argv: Argument vector
@@ -53,7 +71,7 @@ int main(int argc, char *argv[])
 	ssize_t bytes_written, bytes_read;
 	char buffer[BUFFER_SIZE];
 	mode_t old_umask;
-	
+
 	check97(argc);
 	fd_from = open(argv[1], O_RDONLY);
 	check_fd_from(fd_from, argv[1]);
@@ -72,13 +90,7 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	}
-	if (bytes_read == -1)
-	{
-		dprintf(STDERR_FILENO, READ_ERROR, argv[1]);
-		close(fd_from);
-		close(fd_to);
-		exit(98);
-	}
+	check_bytes_read(bytes_read, argv[1], fd_from, fd_to);
 	if (close(fd_from) == -1)
 	{
 		dprintf(STDERR_FILENO, CLOSE_ERROR, fd_from);
