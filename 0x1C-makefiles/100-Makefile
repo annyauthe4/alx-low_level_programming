@@ -1,4 +1,4 @@
-.PHONY = all, clean, fclean, oclean, re
+.PHONY = all clean oclean fclean re
 
 # Variables
 CC = gcc
