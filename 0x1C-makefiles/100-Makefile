@@ -1,11 +1,11 @@
+.PHONY = all, clean, fclean, oclean, re
+
 # Variables
 CC = gcc
 SRC = main.c school.c
 OBJ = ${SRC:.c=.o}
 NAME = school
 CFLAGS = -Wall -Werror -Wextra -pedantic
-
-.PHONY: all, clean, fclean, oclean, re
 
 # Rules
 all: m.h ${OBJ}
